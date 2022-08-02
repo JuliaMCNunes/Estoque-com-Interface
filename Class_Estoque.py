@@ -9,11 +9,7 @@ class Estoque:
         
     # Create
     def cadastrar_fabricantes(self, codigo, nome, cnpj, razao_social):
-        print('Estou aqui')
         obj_fabricante = Fabricante(codigo, nome, cnpj, razao_social)
-        print(obj_fabricante.nome)
-        print(obj_fabricante.cnpj)
-        print(obj_fabricante.razao_social)
         comando_sql = f'insert into Fabricantes (nome, cnpj, razao_social) value ("{obj_fabricante.nome}", "{obj_fabricante.cnpj}", "{obj_fabricante.razao_social}")'
         self.cursorzinho.execute(comando_sql)
         self.conexao.commit()
